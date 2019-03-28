@@ -1,0 +1,60 @@
+{
+    "schema": {
+        "structures": [
+            {
+                "name": "ZEUS_APPLICATIONS_HTML5",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "name": "APPLICATIONS_ID",
+                        "type": "INTEGER",
+                        "length": 0,
+                        "nullable": true,
+                        "primaryKey": "true",
+                        "identity": "true",
+                        "unique": false,
+                        "defaultValue": null,
+                        "precision": null,
+                        "scale": null
+                    },
+                    {
+                        "name": "APPLICATIONS_NAME",
+                        "type": "VARCHAR",
+                        "length": "128",
+                        "nullable": false,
+                        "primaryKey": false,
+                        "identity": false,
+                        "unique": false,
+                        "defaultValue": null,
+                        "precision": null,
+                        "scale": null
+                    },
+                    {
+                        "name": "APPLICATIONS_GITREPO",
+                        "type": "VARCHAR",
+                        "length": "1024",
+                        "nullable": false,
+                        "primaryKey": false,
+                        "identity": false,
+                        "unique": false,
+                        "defaultValue": null,
+                        "precision": null,
+                        "scale": null
+                    },
+                    {
+                        "name": "APPLICATIONS_GITBRANCH",
+                        "type": "VARCHAR",
+                        "length": "128",
+                        "nullable": false,
+                        "primaryKey": false,
+                        "identity": false,
+                        "unique": false,
+                        "defaultValue": null,
+                        "precision": null,
+                        "scale": null
+                    }
+                ]
+            }
+        ]
+    }
+}
