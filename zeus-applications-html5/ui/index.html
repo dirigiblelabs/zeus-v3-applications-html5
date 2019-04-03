@@ -24,6 +24,9 @@
 					<th class="text-capitalize">Name</th>
 					<th class="text-capitalize">Github Repository</th>
 					<th class="text-capitalize">Git Branch</th>
+					<th class="text-capitalize">Date Created</th>
+					<th class="text-capitalize">Last Modified Date</th>
+					<th class="text-capitalize">Created By</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -32,6 +35,9 @@
 					<td>{{next.name}}</td>
 					<td>{{next.gitrepo}}</td>
 					<td>{{next.gitbranch}}</td>
+					<td>{{next.createTime}}</td>
+					<td>{{next.lastModifiedTime}}</td>
+					<td>{{next.user}}</td>
 					<td>
 						<i class="close fa fa-remove" ng-click="pageCtrl.openDeleteDialog(next)" style="font-size: 1.4em"></i>
 						<i class="close fa fa-bars" ng-click="pageCtrl.openEditDialog(next)" style="margin-right: 0.5em; font-size: 1.4em"></i>
@@ -45,9 +51,10 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h3 ng-show="pageCtrl.actionType === 'new'" class="modal-title" id="createEntityLbl">Create entity</h3>
-					<h3 ng-show="pageCtrl.actionType === 'update'" class="modal-title" id="updateEntityLbl">Update entity</h3>
-					<h3 ng-show="pageCtrl.actionType === 'delete'" class="modal-title" id="deleteEntityLbl">Delete entity</h3>
+					<h3 ng-show="pageCtrl.actionType === 'new'" class="modal-title" id="createEntityLbl">Create HTML5 Application</h3>
+					<h3 ng-show="pageCtrl.actionType === 'update'" class="modal-title" id="updateEntityLbl">Update HTML5 Application</h3>
+					<h3 ng-show="pageCtrl.actionType === 'delete'" class="modal-title" id="deleteEntityLbl">Delete HTML5 Application</h3>
+					<small ng-show="pageCtrl.entity.id">Created by <span  ng-bind="pageCtrl.entity.user"></span> at <span ng-bind="pageCtrl.entity.createTime"></span></small>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>

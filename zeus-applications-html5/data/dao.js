@@ -4,23 +4,48 @@ exports.create = function(){
 		"properties": [
 			{
 				name: "id",
-				column: "APPLICATIONS_ID",
+				column: "APP00H_ID",
 				id: true,
 				required: true,
 				type: "BIGINT"
 			},{
 				name: "name",
-				column: "APPLICATIONS_NAME",
+				column: "APP00H_NAME",
 				type: "VARCHAR",
 				size: 126
 			},{
+				name: "user",
+				column: "APP00H_USER",
+				type: "VARCHAR",
+				size: 256
+			},{
+				name: "createTime",
+				column: "APP00H_CREATE_TIME",
+				type: "BIGINT",
+				dbValue: function(createTime){
+					return createTime !== undefined ? new Date(createTime).getTime() : null;
+				},
+				value: function(dbValue){
+					return dbValue !== null ? new Date(dbValue).toISOString() : undefined;
+				}
+			},{
+				name: "lastModifiedTime",
+				column: "APP00H_LASTMODIFIED_TIME",
+				type: "BIGINT",
+				dbValue: function(lastModifiedTime){
+					return lastModifiedTime !== undefined ? new Date(lastModifiedTime).getTime() : null;
+				},
+				value: function(dbValue){
+					return dbValue === null || dbValue === undefined? undefined : new Date(dbValue).toISOString();
+				}
+			},{
 				name: "gitrepo",
-				column: "APPLICATIONS_GITREPO",
+				column: "APP00H_GITREPO",
 				type: "VARCHAR",
 				size: 1024
 			},{
 				name: "gitbranch",
-				column: "APPLICATIONS_GITBRANCH",
+				column: "APP00H_GITBRANCH",
 				type: "VARCHAR",
 				size: 126
 			}]

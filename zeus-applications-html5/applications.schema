@@ -6,7 +6,7 @@
                 "type": "TABLE",
                 "columns": [
                     {
-                        "name": "APPLICATIONS_ID",
+                        "name": "APP00H_ID",
                         "type": "INTEGER",
                         "length": 0,
                         "nullable": true,
@@ -18,9 +18,9 @@
                         "scale": null
                     },
                     {
-                        "name": "APPLICATIONS_NAME",
+                        "name": "APP00H_NAME",
                         "type": "VARCHAR",
-                        "length": "128",
+                        "length": "256",
                         "nullable": false,
                         "primaryKey": false,
                         "identity": false,
@@ -30,10 +30,46 @@
                         "scale": null
                     },
                     {
-                        "name": "APPLICATIONS_GITREPO",
+                        "name": "APP00H_USER",
+                        "type": "VARCHAR",
+                        "length": "256",
+                        "nullable": true,
+                        "primaryKey": false,
+                        "identity": false,
+                        "unique": false,
+                        "defaultValue": null,
+                        "precision": null,
+                        "scale": null
+                    },
+                    {
+                        "name": "APP00H_CREATE_TIME",
+                        "type": "BIGINT",
+                        "length": "0",
+                        "nullable": false,
+                        "primaryKey": false,
+                        "identity": false,
+                        "unique": false,
+                        "defaultValue": null,
+                        "precision": null,
+                        "scale": null
+                    },
+                    {
+                        "name": "APP00H_LASTMODIFIED_TIME",
+                        "type": "BIGINT",
+                        "length": "0",
+                        "nullable": true,
+                        "primaryKey": false,
+                        "identity": false,
+                        "unique": false,
+                        "defaultValue": null,
+                        "precision": null,
+                        "scale": null
+                    },
+                    {
+                        "name": "APP00H_GITREPO",
                         "type": "VARCHAR",
                         "length": "1024",
-                        "nullable": false,
+                        "nullable": true,
                         "primaryKey": false,
                         "identity": false,
                         "unique": false,
@@ -42,10 +78,10 @@
                         "scale": null
                     },
                     {
-                        "name": "APPLICATIONS_GITBRANCH",
+                        "name": "APP00H_GITBRANCH",
                         "type": "VARCHAR",
                         "length": "128",
-                        "nullable": false,
+                        "nullable": true,
                         "primaryKey": false,
                         "identity": false,
                         "unique": false,
